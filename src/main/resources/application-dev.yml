@@ -1,0 +1,82 @@
+server:
+  port: 1234
+spring:
+  #配置邮箱
+  mail:
+    host: smtp.qq.com
+    port: 465
+    protocol: smtp
+    username: 3217277135@qq.com
+    password: mxzyznkiofsodcdb
+    default-encoding: UTF-8
+    test-connection: true #启动项目时验证是否可以正确通信 默认为false
+    properties:
+      mail:
+        nickname: 吉迪恩 #后台系统
+        smtp:
+          auth: true
+          starrttls:
+            enable: true
+            required: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+        debug: false #调试模式
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/machinechat?useUnicode=true&characterEncoding=UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+  thymeleaf:
+    prefix: classpath:/static
+    encoding: UTF-8
+    cache: true
+  mvc:
+    static-path-pattern: /**
+  redis:
+    host: 127.0.0.1
+    #Redis服务器连接端口
+    port: 6379
+    #Redis服务器连接密码（默认为空）
+    password:
+
+    #    #连接超时时间（毫秒）
+    #    connect-timeout: 3000
+    jedis:
+      pool:
+        #连接池最大连接数（使用负值表示没有限制）
+        max-active: 16
+        #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: 5000
+        #连接池中的最大空闲连接
+        max-idle: 8
+        #连接池中的最小空闲连接
+        min-idle: 2
+    database: 0
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  web:
+    resources:
+      static-locations: classpath:/static
+      encoding: UTF-8
+  messages:
+    encoding: UTF-8
+
+mybatis:
+  mapper-locations: classpath:/mapper/*Dao.xml
+  typeAliasesPackage: com.codervibe.aidialoguebot.model
+
+#打印com.codervibe.Mapper执行的日志
+logging:
+  level:
+    root: info
+    com.codervibe.aidialoguebot: info
+    com.codervibe.aidialoguebot.Mapper: debug
+  file:
+    path: ./log
+
+

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.mail.default-encoding.properties.mail.smtp.socketFactory.class",
+      "type": "java.lang.String",
+      "description": "Description for spring.mail.default-encoding.properties.mail.smtp.socketFactory.class."
+  }
+] }
